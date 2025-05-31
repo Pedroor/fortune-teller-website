@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { 
   Eye, 
-  Hand, 
   Sparkles, 
   Moon, 
   Star, 
@@ -16,7 +15,6 @@ import {
   Phone,
   Mail,
   Clock,
-  MessageCircle,
   Play,
   Heart,
   DollarSign,
@@ -173,7 +171,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-start space-x-3">
                     <Users className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                    <span>Conflitos familiares, vícios, dúvidas existenciais ou sensação de estar "perdido(a)";</span>
+                    <span>Conflitos familiares, vícios, dúvidas existenciais ou sensação de estar &quot;perdido(a)&quot;;</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <Eye className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
@@ -314,7 +312,7 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="text-muted-foreground mb-4 italic">
-                  "Mãe Amanda mudou minha vida completamente. Suas orientações foram certeiras e hoje vivo uma realidade que nem imaginava ser possível."
+                  &quot;Mãe Amanda mudou minha vida completamente. Suas orientações foram certeiras e hoje vivo uma realidade que nem imaginava ser possível.&quot;
                 </p>
                 <div className="font-semibold">— Maria S.</div>
               </CardContent>
@@ -328,7 +326,7 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="text-muted-foreground mb-4 italic">
-                  "Estava perdido financeiramente e emocionalmente. Após a consulta, tudo começou a se alinhar. Gratidão eterna!"
+                  &quot;Estava perdido financeiramente e emocionalmente. Após a consulta, tudo começou a se alinhar. Gratidão eterna!&quot;
                 </p>
                 <div className="font-semibold">— João P.</div>
               </CardContent>
@@ -342,7 +340,7 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="text-muted-foreground mb-4 italic">
-                  "A precisão das informações me impressionou. Mãe Amanda tem um dom verdadeiro e uma energia incrível."
+                  &quot;A precisão das informações me impressionou. Mãe Amanda tem um dom verdadeiro e uma energia incrível.&quot;
                 </p>
                 <div className="font-semibold">— Ana L.</div>
               </CardContent>
@@ -455,7 +453,7 @@ export default function Home() {
                       <span className="text-6xl">👩🏽‍🦱</span>
                     </div>
                     <p className="text-lg font-medium text-muted-foreground italic">
-                      "Foto da Mãe Amanda"
+                      &quot;Foto da Mãe Amanda&quot;
                     </p>
                   </div>
                 </div>
