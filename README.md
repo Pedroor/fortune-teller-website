@@ -1,10 +1,10 @@
 # Mãe Amanda Cartomante - Site de Consultas Espirituais
 
-Um site místico para cartomante construído com Next.js, React e shadcn/ui, apresentando um esquema de cores infernal em vermelho e preto. Este projeto foi inspirado na estrutura de sites de coaching matrimonial, mas adaptado para os serviços de uma cartomante brasileira.
+Um site místico para cartomante construído com Next.js, React e shadcn/ui, apresentando um esquema de cores elegante em branco, dourado e preto. Este projeto foi inspirado na estrutura de sites de coaching matrimonial, mas adaptado para os serviços de uma cartomante brasileira.
 
 ## 🔮 Funcionalidades
 
-- **Tema Infernal Escuro**: Fundos pretos profundos com acentos vermelhos carmesim
+- **Tema Elegante Branco & Dourado**: Fundos brancos limpos com acentos dourados elegantes e texto preto
 - **Animações Místicas**: Efeitos de brilho, elementos cintilantes e transições suaves
 - **Design Responsivo**: Totalmente responsivo em todos os dispositivos
 - **Stack Tecnológica Moderna**: Construído com Next.js 15, React 19, TypeScript e Tailwind CSS
@@ -15,9 +15,10 @@ Um site místico para cartomante construído com Next.js, React e shadcn/ui, apr
 ## 🎨 Elementos de Design
 
 - **Paleta de Cores**: 
-  - Primária: Vermelho carmesim profundo (`oklch(0.55 0.25 15)`)
-  - Fundo: Preto puro a muito escuro (`oklch(0.05-0.08 0 0)`)
-  - Acentos: Várias tonalidades de vermelho e cinzas escuros
+  - Primária: Dourado rico (`oklch(0.65 0.22 80)`)
+  - Fundo: Branco elegante (`oklch(0.98 0.01 80)`)
+  - Texto: Preto suave (`oklch(0.15 0.02 80)`)
+  - Acentos: Várias tonalidades de dourado
 - **Tipografia**: Fontes limpas e modernas com toque místico
 - **Animações**: Animações CSS personalizadas para efeitos místicos
 - **Ícones**: Ícones Lucide React para iconografia consistente
@@ -55,8 +56,8 @@ npm run dev
 fortune-teller-website/
 ├── src/
 │   ├── app/
-│   │   ├── globals.css          # Estilos globais com tema infernal
-│   │   ├── layout.tsx           # Layout raiz com tema escuro
+│   │   ├── globals.css          # Estilos globais com tema branco & dourado elegante
+│   │   ├── layout.tsx           # Layout raiz com tema claro (branco & dourado)
 │   │   └── page.tsx             # Homepage com todas as seções
 │   ├── components/
 │   │   ├── ui/                  # Componentes shadcn/ui
@@ -95,7 +96,7 @@ fortune-teller-website/
 - **Baralho Cigano**: Entendimento do passado, presente e futuro
 - **Tarot**: Mensagens do inconsciente e orientações
 - **Oráculo de Ossos**: Mensagens dos guias espirituais
-- **Búzios**: Comunicação sagrada com os Orixás
+- **Jogo de Exu**: Comunicação direta com Exu
 
 ### Como Funciona
 - Informações sobre consultas online e presenciais

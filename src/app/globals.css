@@ -45,73 +45,73 @@
 
 :root {
   --radius: 0.625rem;
-  /* Infernal Dark Theme - Light mode (dark base) */
-  --background: oklch(0.08 0 0); /* Very dark black */
-  --foreground: oklch(0.95 0.15 15); /* Light red-tinted white */
-  --card: oklch(0.12 0.05 15); /* Dark card with subtle red */
-  --card-foreground: oklch(0.92 0.12 15); /* Light red text */
-  --popover: oklch(0.10 0.05 15); /* Dark popover */
-  --popover-foreground: oklch(0.95 0.12 15); /* Light red text */
-  --primary: oklch(0.55 0.25 15); /* Deep crimson red */
-  --primary-foreground: oklch(0.98 0.05 15); /* Almost white with red tint */
-  --secondary: oklch(0.15 0.08 15); /* Dark secondary with red tint */
-  --secondary-foreground: oklch(0.85 0.15 15); /* Light red text */
-  --muted: oklch(0.18 0.05 15); /* Muted dark red */
-  --muted-foreground: oklch(0.65 0.12 15); /* Muted red text */
-  --accent: oklch(0.45 0.22 15); /* Accent red */
-  --accent-foreground: oklch(0.95 0.08 15); /* Light accent text */
-  --destructive: oklch(0.62 0.28 15); /* Bright destructive red */
-  --border: oklch(0.25 0.08 15); /* Dark red border */
-  --input: oklch(0.20 0.06 15); /* Dark input background */
-  --ring: oklch(0.55 0.25 15); /* Red focus ring */
-  --chart-1: oklch(0.55 0.25 15); /* Red chart color */
-  --chart-2: oklch(0.45 0.20 25); /* Orange-red */
-  --chart-3: oklch(0.35 0.15 35); /* Dark orange */
-  --chart-4: oklch(0.65 0.18 10); /* Light red */
-  --chart-5: oklch(0.40 0.22 20); /* Dark red-orange */
-  --sidebar: oklch(0.10 0.05 15); /* Dark sidebar */
-  --sidebar-foreground: oklch(0.90 0.12 15); /* Light sidebar text */
-  --sidebar-primary: oklch(0.55 0.25 15); /* Red sidebar primary */
-  --sidebar-primary-foreground: oklch(0.98 0.05 15); /* Light sidebar primary text */
-  --sidebar-accent: oklch(0.18 0.08 15); /* Dark sidebar accent */
-  --sidebar-accent-foreground: oklch(0.85 0.15 15); /* Light sidebar accent text */
-  --sidebar-border: oklch(0.25 0.08 15); /* Dark red sidebar border */
-  --sidebar-ring: oklch(0.55 0.25 15); /* Red sidebar ring */
+  /* Elegant White & Gold Theme - High Contrast */
+  --background: rgb(255, 255, 255); /* Pure white background */
+  --foreground: rgb(133, 77, 14); /* Rich dark gold for main text */
+  --card: rgb(255, 255, 255); /* Pure white cards */
+  --card-foreground: rgb(133, 77, 14); /* Dark gold text on cards */
+  --popover: rgb(255, 255, 255); /* White popover */
+  --popover-foreground: rgb(133, 77, 14); /* Dark gold text */
+  --primary: rgb(194, 134, 48); /* Medium gold primary */
+  --primary-foreground: rgb(255, 255, 255); /* White text on gold */
+  --secondary: rgb(251, 235, 186); /* Light cream secondary */
+  --secondary-foreground: rgb(92, 57, 19); /* Very dark gold text */
+  --muted: rgb(253, 248, 235); /* Very light cream muted */
+  --muted-foreground: rgb(160, 99, 25); /* Medium dark gold for muted text */
+  --accent: rgb(247, 215, 116); /* Bright gold accent */
+  --accent-foreground: rgb(92, 57, 19); /* Very dark gold on accent */
+  --destructive: rgb(239, 68, 68); /* Keep red for destructive actions */
+  --border: rgb(226, 179, 89); /* Medium gold border */
+  --input: rgb(253, 248, 235); /* Very light cream input */
+  --ring: rgb(194, 134, 48); /* Medium gold focus ring */
+  --chart-1: rgb(194, 134, 48); /* Medium gold */
+  --chart-2: rgb(247, 215, 116); /* Light gold */
+  --chart-3: rgb(226, 179, 89); /* Medium light gold */
+  --chart-4: rgb(251, 235, 186); /* Cream gold */
+  --chart-5: rgb(253, 248, 235); /* Very light cream */
+  --sidebar: rgb(255, 255, 255); /* White sidebar */
+  --sidebar-foreground: rgb(133, 77, 14); /* Dark gold sidebar text */
+  --sidebar-primary: rgb(194, 134, 48); /* Medium gold sidebar primary */
+  --sidebar-primary-foreground: rgb(255, 255, 255); /* White sidebar primary text */
+  --sidebar-accent: rgb(253, 248, 235); /* Very light cream sidebar accent */
+  --sidebar-accent-foreground: rgb(133, 77, 14); /* Dark gold sidebar accent text */
+  --sidebar-border: rgb(226, 179, 89); /* Medium gold sidebar border */
+  --sidebar-ring: rgb(194, 134, 48); /* Medium gold sidebar ring */
 }
 
 .dark {
-  /* Enhanced dark mode with even more intense reds */
-  --background: oklch(0.05 0 0); /* Pure black */
-  --foreground: oklch(0.98 0.18 15); /* Bright red-tinted white */
-  --card: oklch(0.08 0.08 15); /* Very dark card with red */
-  --card-foreground: oklch(0.95 0.15 15); /* Bright red text */
-  --popover: oklch(0.06 0.06 15); /* Very dark popover */
-  --popover-foreground: oklch(0.98 0.15 15); /* Bright red text */
-  --primary: oklch(0.65 0.30 15); /* Bright crimson */
-  --primary-foreground: oklch(0.02 0 0); /* Pure black text */
-  --secondary: oklch(0.12 0.10 15); /* Dark secondary with more red */
-  --secondary-foreground: oklch(0.90 0.18 15); /* Bright red text */
-  --muted: oklch(0.15 0.08 15); /* Muted dark red */
-  --muted-foreground: oklch(0.70 0.15 15); /* Muted red text */
-  --accent: oklch(0.55 0.28 15); /* Bright accent red */
-  --accent-foreground: oklch(0.98 0.10 15); /* Light accent text */
-  --destructive: oklch(0.70 0.32 15); /* Very bright destructive red */
-  --border: oklch(0.20 0.10 15); /* Dark red border */
-  --input: oklch(0.15 0.08 15); /* Dark input with red tint */
-  --ring: oklch(0.65 0.30 15); /* Bright red focus ring */
-  --chart-1: oklch(0.65 0.30 15); /* Bright red */
-  --chart-2: oklch(0.55 0.25 25); /* Orange-red */
-  --chart-3: oklch(0.45 0.20 35); /* Dark orange */
-  --chart-4: oklch(0.75 0.22 10); /* Light red */
-  --chart-5: oklch(0.50 0.28 20); /* Red-orange */
-  --sidebar: oklch(0.06 0.06 15); /* Very dark sidebar */
-  --sidebar-foreground: oklch(0.95 0.15 15); /* Bright sidebar text */
-  --sidebar-primary: oklch(0.65 0.30 15); /* Bright red sidebar primary */
-  --sidebar-primary-foreground: oklch(0.02 0 0); /* Black sidebar primary text */
-  --sidebar-accent: oklch(0.15 0.10 15); /* Dark sidebar accent */
-  --sidebar-accent-foreground: oklch(0.90 0.18 15); /* Bright sidebar accent text */
-  --sidebar-border: oklch(0.20 0.10 15); /* Dark red sidebar border */
-  --sidebar-ring: oklch(0.65 0.30 15); /* Bright red sidebar ring */
+  /* Enhanced dark mode with elegant gold accents */
+  --background: rgb(20, 20, 20); /* Very dark background */
+  --foreground: rgb(247, 215, 116); /* Light gold text */
+  --card: rgb(30, 30, 30); /* Dark card background */
+  --card-foreground: rgb(247, 215, 116); /* Light gold text */
+  --popover: rgb(30, 30, 30); /* Dark popover */
+  --popover-foreground: rgb(247, 215, 116); /* Light gold text */
+  --primary: rgb(194, 134, 48); /* Medium gold primary */
+  --primary-foreground: rgb(255, 255, 255); /* White text */
+  --secondary: rgba(194, 134, 48, 0.2); /* Transparent gold secondary */
+  --secondary-foreground: rgb(247, 215, 116); /* Light gold text */
+  --muted: rgba(194, 134, 48, 0.1); /* Very transparent gold muted */
+  --muted-foreground: rgba(247, 215, 116, 0.8); /* Semi-transparent gold */
+  --accent: rgb(226, 179, 89); /* Medium light gold accent */
+  --accent-foreground: rgb(20, 20, 20); /* Dark text */
+  --destructive: rgb(239, 68, 68); /* Keep red */
+  --border: rgba(194, 134, 48, 0.3); /* Transparent gold border */
+  --input: rgba(194, 134, 48, 0.1); /* Transparent gold input */
+  --ring: rgb(194, 134, 48); /* Medium gold ring */
+  --chart-1: rgb(194, 134, 48); /* Medium gold */
+  --chart-2: rgb(247, 215, 116); /* Light gold */
+  --chart-3: rgb(226, 179, 89); /* Medium light gold */
+  --chart-4: rgb(251, 235, 186); /* Cream gold */
+  --chart-5: rgb(253, 248, 235); /* Very light cream */
+  --sidebar: rgb(30, 30, 30); /* Dark sidebar */
+  --sidebar-foreground: rgb(247, 215, 116); /* Light gold text */
+  --sidebar-primary: rgb(194, 134, 48); /* Medium gold primary */
+  --sidebar-primary-foreground: rgb(255, 255, 255); /* White text */
+  --sidebar-accent: rgba(194, 134, 48, 0.2); /* Transparent gold accent */
+  --sidebar-accent-foreground: rgb(247, 215, 116); /* Light gold text */
+  --sidebar-border: rgba(194, 134, 48, 0.3); /* Transparent gold border */
+  --sidebar-ring: rgb(194, 134, 48); /* Medium gold ring */
 }
 
 @layer base {
@@ -123,22 +123,22 @@
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
   
-  /* Custom scrollbar for infernal theme */
+  /* Custom scrollbar for elegant white & gold theme */
   ::-webkit-scrollbar {
     width: 8px;
   }
   
   ::-webkit-scrollbar-track {
-    background: oklch(0.10 0.05 15);
+    background: rgb(253, 248, 235); /* Very light cream */
   }
   
   ::-webkit-scrollbar-thumb {
-    background: oklch(0.55 0.25 15);
+    background: rgb(194, 134, 48); /* Medium gold */
     border-radius: 4px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: oklch(0.65 0.30 15);
+    background: rgb(133, 77, 14); /* Dark gold */
   }
 }
 
@@ -150,11 +150,37 @@
 
 @keyframes glow {
   0%, 100% { 
-    box-shadow: 0 0 5px oklch(0.55 0.25 15), 0 0 10px oklch(0.55 0.25 15), 0 0 15px oklch(0.55 0.25 15);
+    box-shadow: 0 0 5px rgb(194, 134, 48), 0 0 10px rgb(194, 134, 48), 0 0 15px rgb(194, 134, 48);
   }
   50% { 
-    box-shadow: 0 0 10px oklch(0.65 0.30 15), 0 0 20px oklch(0.65 0.30 15), 0 0 30px oklch(0.65 0.30 15);
+    box-shadow: 0 0 10px rgb(247, 215, 116), 0 0 20px rgb(247, 215, 116), 0 0 30px rgb(247, 215, 116);
   }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+  50% { transform: scale(1) rotate(180deg); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
 }
 
 .mystical-glow {
@@ -163,4 +189,220 @@
 
 .flicker {
   animation: flicker 3s ease-in-out infinite;
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(194, 134, 48, 0.3),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Enhanced gradient backgrounds */
+.mystical-gradient {
+  background: linear-gradient(
+    135deg,
+    rgb(255, 255, 255) 0%,
+    rgb(253, 248, 235) 25%,
+    rgb(251, 235, 186) 50%,
+    rgb(249, 225, 151) 75%,
+    rgb(255, 255, 255) 100%
+  );
+}
+
+.golden-gradient {
+  background: linear-gradient(
+    135deg,
+    rgb(194, 134, 48),
+    rgb(226, 179, 89),
+    rgb(247, 215, 116)
+  );
+}
+
+.card-gradient {
+  background: linear-gradient(
+    135deg,
+    rgb(255, 255, 255) 0%,
+    rgb(253, 248, 235) 100%
+  );
+}
+
+/* Light gold background with dark text */
+.light-gold-bg {
+  background: linear-gradient(
+    135deg,
+    rgb(253, 248, 235) 0%,
+    rgb(251, 235, 186) 100%
+  );
+  color: rgb(92, 57, 19);
+}
+
+/* Enhanced shadows */
+.elegant-shadow {
+  box-shadow: 
+    0 4px 6px -1px rgba(194, 134, 48, 0.1),
+    0 2px 4px -1px rgba(194, 134, 48, 0.06);
+}
+
+.mystical-shadow {
+  box-shadow: 
+    0 10px 25px -3px rgba(194, 134, 48, 0.15),
+    0 4px 6px -2px rgba(194, 134, 48, 0.1),
+    0 0 0 1px rgba(194, 134, 48, 0.05);
+}
+
+.glow-shadow {
+  box-shadow: 
+    0 0 20px rgba(194, 134, 48, 0.4),
+    0 0 40px rgba(194, 134, 48, 0.3),
+    0 0 60px rgba(194, 134, 48, 0.2);
+}
+
+/* Enhanced typography with elegant gold variations */
+.mystical-text {
+  background: linear-gradient(
+    135deg,
+    rgb(133, 77, 14),
+    rgb(194, 134, 48),
+    rgb(133, 77, 14)
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.golden-text {
+  background: linear-gradient(
+    135deg,
+    rgb(133, 77, 14),
+    rgb(194, 134, 48),
+    rgb(226, 179, 89)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Rich dark gold text for maximum contrast */
+.golden-text-readable {
+  color: rgb(133, 77, 14);
+  font-weight: 600;
+}
+
+/* Medium gold text for accents */
+.golden-text-medium {
+  color: rgb(194, 134, 48);
+  font-weight: 500;
+}
+
+/* Light gold text for subtle elements */
+.golden-text-light {
+  color: rgb(226, 179, 89);
+  font-weight: 500;
+}
+
+/* High contrast dark gold text */
+.high-contrast-text {
+  color: rgb(92, 57, 19);
+  font-weight: 600;
+}
+
+/* Elegant white text for gold backgrounds */
+.white-text-elegant {
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced borders */
+.mystical-border {
+  border: 1px solid transparent;
+  background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) padding-box,
+              linear-gradient(135deg, rgb(194, 134, 48), rgb(226, 179, 89), rgb(247, 215, 116)) border-box;
+}
+
+/* Glass morphism effect */
+.glass-effect {
+  backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(194, 134, 48, 0.2);
+}
+
+/* Particle background */
+.particle-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(194, 134, 48, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 80% 80%, rgba(226, 179, 89, 0.06) 1px, transparent 1px),
+    radial-gradient(circle at 40% 60%, rgba(247, 215, 116, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px, 80px 80px, 120px 120px;
+  pointer-events: none;
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(194, 134, 48, 0.5);
+}
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(253, 248, 235); /* Very light cream */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    135deg,
+    rgb(194, 134, 48),
+    rgb(226, 179, 89)
+  );
+  border-radius: 6px;
+  border: 2px solid rgb(253, 248, 235);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    135deg,
+    rgb(133, 77, 14),
+    rgb(194, 134, 48)
+  );
 }

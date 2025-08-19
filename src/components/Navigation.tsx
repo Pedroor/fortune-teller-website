@@ -75,10 +75,10 @@ export default function Navigation() {
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link href="/buzios" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                          <div className="text-sm font-medium leading-none">Búzios</div>
+                        <Link href="/jogo-de-exu" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <div className="text-sm font-medium leading-none">Jogo de Exu</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Comunicação sagrada com os Orixás
+                            Comunicação direta com Exu
                           </p>
                         </Link>
                       </NavigationMenuLink>
@@ -160,11 +160,11 @@ export default function Navigation() {
                 Oráculo de Ossos
               </Link>
               <Link
-                href="/buzios"
+                href="/jogo-de-exu"
                 className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                Búzios
+                Jogo de Exu
               </Link>
               <Link
                 href="/sobre"

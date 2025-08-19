@@ -19,19 +19,22 @@ import {
   Heart,
   DollarSign,
   Users,
-  Shield
+  Shield,
+  MessageCircle,
+  Droplets,
+  Search
 } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen mystical-gradient">
       <Navigation />
       
-      {/* Alert Banner */}
-      <div className="pt-16 bg-primary/10 border-b border-primary/20">
+            {/* Alert Banner */}
+      <div className="pt-16 light-gold-bg border-b mystical-border">
         <div className="container mx-auto px-4 py-4">
           <div className="text-center">
-            <p className="text-lg md:text-xl font-medium text-primary">
+            <p className="text-lg md:text-xl font-medium high-contrast-text">
               ⚠️ E se o que te impede de ser feliz estiver mais perto do que você imagina? Eu te ajudo a enxergar!
             </p>
           </div>
@@ -39,29 +42,31 @@ export default function Home() {
       </div>
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden particle-bg">
         {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/10" />
+        <div className="absolute inset-0 mystical-gradient opacity-90" />
         
         {/* Floating mystical elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full flicker" />
-          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-primary rounded-full flicker" style={{animationDelay: '1s'}} />
-          <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-primary rounded-full flicker" style={{animationDelay: '2s'}} />
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full flicker glow-shadow" />
+          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-primary rounded-full sparkle" style={{animationDelay: '1s'}} />
+          <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-primary rounded-full float" style={{animationDelay: '2s'}} />
           <div className="absolute top-1/2 right-1/4 w-1 h-1 bg-primary rounded-full flicker" style={{animationDelay: '0.5s'}} />
+          <div className="absolute top-3/4 left-1/5 w-1 h-1 bg-primary rounded-full sparkle" style={{animationDelay: '3s'}} />
+          <div className="absolute top-1/5 right-1/5 w-1.5 h-1.5 bg-primary rounded-full float" style={{animationDelay: '1.5s'}} />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <Badge variant="secondary" className="mb-6 text-sm px-4 py-2">
-              <Sparkles className="w-4 h-4 mr-2" />
+          <div className="text-center max-w-4xl mx-auto fade-in-up">
+            <Badge variant="secondary" className="mb-6 text-sm px-4 py-2 mystical-shadow hover-glow">
+              <Sparkles className="w-4 h-4 mr-2 mystical-glow" />
               Mãe Amanda Cartomante
             </Badge>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 mystical-text">
               TRANSFORMO VIDAS
               <br />
-              <span >ATRAVÉS DE MAGIA</span>
+              <span className="golden-text">ATRAVÉS DE MAGIA</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -70,10 +75,10 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <WhatsAppButton size="lg" className="text-lg px-8 py-6">
+              <WhatsAppButton size="lg" className="text-lg px-8 py-6 mystical-shadow hover-lift hover-glow">
                 Marcar Consulta no WhatsApp
               </WhatsAppButton>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-primary/50 hover:bg-primary/10">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6 mystical-border hover-lift glass-effect">
                 <Play className="w-5 h-5 mr-2" />
                 Ver Apresentação
               </Button>
@@ -83,19 +88,19 @@ export default function Home() {
       </section>
 
       {/* Video Section */}
-      <section className="py-20 bg-card/50">
+      <section className="py-20 card-gradient">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              Conheça a <span className="text-primary">Mãe Amanda</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 golden-text-readable">
+              Conheça a <span className="mystical-text">Mãe Amanda</span>
             </h2>
-            <div className="aspect-video bg-gradient-to-br from-primary/20 to-background rounded-lg flex items-center justify-center mb-8">
+            <div className="aspect-video golden-gradient rounded-lg flex items-center justify-center mb-8 mystical-shadow hover-lift">
               <div className="text-center">
-                <Play className="w-24 h-24 text-primary mx-auto mb-4 mystical-glow cursor-pointer hover:scale-110 transition-transform" />
-                <p className="text-lg font-medium text-muted-foreground">
+                <Play className="w-24 h-24 text-white mx-auto mb-4 mystical-glow cursor-pointer hover:scale-110 transition-transform float" />
+                <p className="text-lg font-medium white-text-elegant">
                   Vídeo de Apresentação
                 </p>
-                <p className="text-sm text-muted-foreground mt-2">
+                <p className="text-sm white-text-elegant opacity-90 mt-2">
                   Descubra como funciona o atendimento e como posso te ajudar
                 </p>
               </div>
@@ -108,8 +113,8 @@ export default function Home() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              Nem tudo é o que <span className="text-primary">parece...</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 golden-text-readable">
+              Nem tudo é o que <span className="mystical-text">parece...</span>
             </h2>
             <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
               <p>
@@ -125,8 +130,8 @@ export default function Home() {
               <p>
                 As respostas estão aqui — e a transformação começa quando você decide enxergar.
               </p>
-              <div className="bg-primary/10 p-8 rounded-lg border border-primary/20 my-8">
-                <p className="text-xl font-bold text-primary mb-4">
+              <div className="card-gradient p-8 rounded-lg mystical-border mystical-shadow my-8 hover-lift">
+                <p className="text-xl font-bold mystical-text mb-4">
                   Chega de viver no escuro.
                 </p>
                 <p>
@@ -142,11 +147,11 @@ export default function Home() {
       </section>
 
       {/* Third Part - Baralho Cigano Explanation */}
-      <section className="py-20 bg-card/50">
+      {/* <section className="py-20 bg-card/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
-              Como funciona o atendimento com o <span className="text-primary">Baralho Cigano?</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center golden-text-readable">
+              Como funciona o atendimento com o <span className="mystical-text">Baralho Cigano?</span>
             </h2>
             
             <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
@@ -200,14 +205,14 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Services Cards */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Métodos de <span className="text-primary">Consulta</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 golden-text-readable">
+              Métodos de <span className="mystical-text">Consulta</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Diferentes ferramentas espirituais para diferentes necessidades da sua alma
@@ -215,50 +220,50 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-primary/20 hover:border-primary/50 text-center">
+            <Card className="group hover-lift mystical-shadow hover-glow transition-all duration-300 mystical-border text-center card-gradient">
               <CardHeader>
-                <div className="mx-auto w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Sparkles className="w-10 h-10 text-primary" />
+                <div className="mx-auto w-20 h-20 golden-gradient rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform float">
+                  <Sparkles className="w-10 h-10 text-white" />
                 </div>
-                <CardTitle className="text-xl">Baralho Cigano</CardTitle>
+                <CardTitle className="text-xl golden-text-medium">Baralho Cigano</CardTitle>
                 <CardDescription className="text-center">
                   É possível entender situações do passado, clarear o presente e identificar as possibilidades do futuro.
                 </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-primary/20 hover:border-primary/50 text-center">
+            <Card className="group hover-lift mystical-shadow hover-glow transition-all duration-300 mystical-border text-center card-gradient">
               <CardHeader>
-                <div className="mx-auto w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Eye className="w-10 h-10 text-primary" />
+                <div className="mx-auto w-20 h-20 golden-gradient rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform float" style={{animationDelay: '0.5s'}}>
+                  <Eye className="w-10 h-10 text-white" />
                 </div>
-                <CardTitle className="text-xl">Tarot</CardTitle>
+                <CardTitle className="text-xl golden-text-medium">Tarot</CardTitle>
                 <CardDescription className="text-center">
                   Revela mensagens do inconsciente, mostra caminhos, bloqueios e possibilidades futuras. Ideal para clareza sobre decisões, relacionamentos e carreira.
                 </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-primary/20 hover:border-primary/50 text-center">
+            <Card className="group hover-lift mystical-shadow hover-glow transition-all duration-300 mystical-border text-center card-gradient">
               <CardHeader>
-                <div className="mx-auto w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Shield className="w-10 h-10 text-primary" />
+                <div className="mx-auto w-20 h-20 golden-gradient rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform float" style={{animationDelay: '1s'}}>
+                  <Shield className="w-10 h-10 text-white" />
                 </div>
-                <CardTitle className="text-xl">Oráculo de Ossos</CardTitle>
+                <CardTitle className="text-xl golden-text-medium">Oráculo de Ossos</CardTitle>
                 <CardDescription className="text-center">
                   É possível receber mensagens dos guias, entender questões profundas da alma, identificar bloqueios e revelar caminhos para cura, proteção e transformação.
                 </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="group hover:shadow-2xl transition-all duration-300 border-primary/20 hover:border-primary/50 text-center">
+            <Card className="group hover-lift mystical-shadow hover-glow transition-all duration-300 mystical-border text-center card-gradient">
               <CardHeader>
-                <div className="mx-auto w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Moon className="w-10 h-10 text-primary" />
+                <div className="mx-auto w-20 h-20 golden-gradient rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform float" style={{animationDelay: '1.5s'}}>
+                  <Flame className="w-10 h-10 text-white" />
                 </div>
-                <CardTitle className="text-xl">Búzios</CardTitle>
+                <CardTitle className="text-xl golden-text-medium">Jogo de Exu</CardTitle>
                 <CardDescription className="text-center">
-                  A leitura dos búzios é um oráculo sagrado de origem africana, usado para se comunicar com os Orixás.
+                  Comunicação direta com Exu, entidade poderosa que abre caminhos e remove obstáculos da sua vida.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -349,72 +354,200 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Services Section */}
       <section className="py-20 bg-card/50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              <span className="text-primary">Valores</span> das Consultas
+              <span className="text-primary">Serviços</span> e Valores
             </h2>
             
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="border-primary/20 hover:border-primary/50 transition-colors">
-                <CardHeader className="text-center">
-                  <CardTitle className="text-2xl">Consulta Online</CardTitle>
-                  <div className="text-4xl font-bold text-primary my-4">R$ 150</div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Consulta Completa */}
+              <Card className="mystical-border hover-lift mystical-shadow hover-glow transition-all card-gradient h-full flex flex-col">
+                <CardHeader className="text-center flex-shrink-0">
+                  <div className="mx-auto w-16 h-16 golden-gradient rounded-full flex items-center justify-center mb-4">
+                    <Phone className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl golden-text-medium">Consulta Completa</CardTitle>
                   <CardDescription>
-                    Atendimento completo via videochamada
+                    Vídeo chamada ou presencial
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 text-left">
-                    <li className="flex items-center space-x-2">
-                      <Star className="w-4 h-4 text-primary" />
-                      <span>1 hora de consulta</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <Star className="w-4 h-4 text-primary" />
-                      <span>Análise completa da vida</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <Star className="w-4 h-4 text-primary" />
-                      <span>Orientações espirituais</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <Star className="w-4 h-4 text-primary" />
-                      <span>Indicação de rituais se necessário</span>
-                    </li>
-                  </ul>
+                <CardContent className="text-center flex-grow flex flex-col justify-between">
+                  <div className="mb-4">
+                    <div className="text-3xl font-bold mystical-text">R$ 277</div>
+                    <div className="text-sm text-muted-foreground line-through">De R$ 333,00</div>
+                  </div>
+                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                    Agendar Consulta
+                  </WhatsAppButton>
                 </CardContent>
               </Card>
 
-              <Card className="border-primary/20 hover:border-primary/50 transition-colors">
-                <CardHeader className="text-center">
-                  <CardTitle className="text-2xl">Consulta Presencial</CardTitle>
-                  <div className="text-4xl font-bold text-primary my-4">R$ 200</div>
+              {/* Consulta com 4 Perguntas */}
+              <Card className="mystical-border hover-lift mystical-shadow hover-glow transition-all card-gradient h-full flex flex-col">
+                <CardHeader className="text-center flex-shrink-0">
+                  <div className="mx-auto w-16 h-16 golden-gradient rounded-full flex items-center justify-center mb-4">
+                    <MessageCircle className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl golden-text-medium">4 Perguntas Objetivas</CardTitle>
                   <CardDescription>
-                    Atendimento presencial no consultório
+                    Respostas diretas e claras
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 text-left">
-                    <li className="flex items-center space-x-2">
-                      <Star className="w-4 h-4 text-primary" />
-                      <span>1 hora de consulta</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <Star className="w-4 h-4 text-primary" />
-                      <span>Análise completa da vida</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <Star className="w-4 h-4 text-primary" />
-                      <span>Energia presencial mais intensa</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <Star className="w-4 h-4 text-primary" />
-                      <span>Trabalhos espirituais no local</span>
-                    </li>
-                  </ul>
+                <CardContent className="text-center flex-grow flex flex-col justify-between">
+                  <div className="mb-4">
+                    <div className="text-3xl font-bold mystical-text">R$ 70</div>
+                    <div className="text-sm text-muted-foreground line-through">De R$ 100,00</div>
+                  </div>
+                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                    Fazer Perguntas
+                  </WhatsAppButton>
+                </CardContent>
+              </Card>
+
+              {/* Vela de Pedido */}
+              <Card className="mystical-border hover-lift mystical-shadow hover-glow transition-all card-gradient h-full flex flex-col">
+                <CardHeader className="text-center flex-shrink-0">
+                  <div className="mx-auto w-16 h-16 golden-gradient rounded-full flex items-center justify-center mb-4">
+                    <Flame className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl golden-text-medium">Vela de Pedido</CardTitle>
+                  <CardDescription>
+                    Ritual personalizado com vela
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="text-center flex-grow flex flex-col justify-between">
+                  <div className="mb-4">
+                    <div className="text-3xl font-bold mystical-text">R$ 68</div>
+                    <div className="text-sm text-muted-foreground line-through">De R$ 97,00</div>
+                  </div>
+                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                    Solicitar Vela
+                  </WhatsAppButton>
+                </CardContent>
+              </Card>
+
+                {/* Ritual Amoroso */}
+                <Card className="mystical-border hover-lift mystical-shadow hover-glow transition-all card-gradient h-full flex flex-col">
+                <CardHeader className="text-center flex-shrink-0">
+                  <div className="mx-auto w-16 h-16 golden-gradient rounded-full flex items-center justify-center mb-4">
+                    <Heart className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl golden-text-medium">Ritual de Prosperidade</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center flex-grow flex flex-col justify-between">
+                  <div className="mb-4">
+                    <div className="text-3xl font-bold mystical-text">R$ 138</div>
+                    <div className="text-sm text-muted-foreground line-through">De R$ 197,00</div>
+                  </div>
+                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                    Solicitar Ritual
+                  </WhatsAppButton>
+                </CardContent>
+              </Card>
+
+              {/* Ritual Amoroso */}
+              <Card className="mystical-border hover-lift mystical-shadow hover-glow transition-all card-gradient h-full flex flex-col">
+                <CardHeader className="text-center flex-shrink-0">
+                  <div className="mx-auto w-16 h-16 golden-gradient rounded-full flex items-center justify-center mb-4">
+                    <Heart className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl golden-text-medium">Ritual Amoroso</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center flex-grow flex flex-col justify-between">
+                  <div className="mb-4">
+                    <div className="text-3xl font-bold mystical-text">R$ 138</div>
+                    <div className="text-sm text-muted-foreground line-through">De R$ 197,00</div>
+                  </div>
+                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                    Solicitar Ritual
+                  </WhatsAppButton>
+                </CardContent>
+              </Card>
+
+                {/* Banhos Energéticos */}
+                <Card className="mystical-border hover-lift mystical-shadow hover-glow transition-all card-gradient h-full flex flex-col">
+                <CardHeader className="text-center flex-shrink-0">
+                  <div className="mx-auto w-16 h-16 golden-gradient rounded-full flex items-center justify-center mb-4">
+                    <Droplets className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl golden-text-medium">Banhos Energético de Limpeza Espiritual</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center flex-grow flex flex-col justify-between">
+                  <div className="mb-4">
+           
+                    <div className="text-3xl font-bold mystical-text">R$ 110</div>
+                    <div className="text-sm text-muted-foreground line-through">De R$ 157,00</div>
+                  
+                  </div>
+                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                    Solicitar Banho
+                  </WhatsAppButton>
+                </CardContent>
+              </Card>
+
+              {/* Banhos Energéticos */}
+              <Card className="mystical-border hover-lift mystical-shadow hover-glow transition-all card-gradient h-full flex flex-col">
+                <CardHeader className="text-center flex-shrink-0">
+                  <div className="mx-auto w-16 h-16 golden-gradient rounded-full flex items-center justify-center mb-4">
+                    <Droplets className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl golden-text-medium">Banhos Energético de Amor</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center flex-grow flex flex-col justify-between">
+                  <div className="mb-4">
+           
+                    <div className="text-3xl font-bold mystical-text">R$ 110</div>
+                    <div className="text-sm text-muted-foreground line-through">De R$ 157,00</div>
+                  
+                  </div>
+                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                    Solicitar Banho
+                  </WhatsAppButton>
+                </CardContent>
+              </Card>
+
+                 {/* Banhos Energéticos */}
+                 <Card className="mystical-border hover-lift mystical-shadow hover-glow transition-all card-gradient h-full flex flex-col">
+                <CardHeader className="text-center flex-shrink-0">
+                  <div className="mx-auto w-16 h-16 golden-gradient rounded-full flex items-center justify-center mb-4">
+                    <Droplets className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl golden-text-medium">Banho Energético de Prosperidade</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center flex-grow flex flex-col justify-between">
+                  <div className="mb-4">
+                    <div className="text-3xl font-bold mystical-text">R$ 110</div>
+                    <div className="text-sm text-muted-foreground line-through">De R$ 157,00</div>
+                  
+                  </div>
+                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                    Solicitar Banho
+                  </WhatsAppButton>
+                </CardContent>
+              </Card>
+
+              {/* Avaliação Trabalho Espiritual */}
+              <Card className="mystical-border hover-lift mystical-shadow hover-glow transition-all card-gradient h-full flex flex-col">
+                <CardHeader className="text-center flex-shrink-0">
+                  <div className="mx-auto w-16 h-16 golden-gradient rounded-full flex items-center justify-center mb-4">
+                    <Search className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl golden-text-medium">Avaliação Espiritual</CardTitle>
+                  <CardDescription>
+                    Para Trabalho Espiritual
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="text-center flex-grow flex flex-col justify-between">
+                  <div className="mb-4">
+                    <div className="text-3xl font-bold mystical-text">R$ 35</div>
+                    <div className="text-sm text-muted-foreground line-through">De R$ 50,00</div>
+                  </div>
+                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                    Solicitar Avaliação
+                  </WhatsAppButton>
                 </CardContent>
               </Card>
             </div>
@@ -560,7 +693,7 @@ export default function Home() {
                 <div>Baralho Cigano</div>
                 <div>Tarot</div>
                 <div>Oráculo de Ossos</div>
-                <div>Búzios</div>
+                <div>Jogo de Exu</div>
               </div>
             </div>
             
