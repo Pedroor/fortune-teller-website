@@ -1,12 +1,9 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { Menu, X } from "lucide-react";
 import WhatsAppButton from "./WhatsAppButton";
 import Image from "next/image";
 import logo from "../../public/Pai Paulo de Ayra (49).jpg";
-import { useState, useEffect } from "react";
 
 export default function Navigation() {
   // Mobile menu state and effects removed
