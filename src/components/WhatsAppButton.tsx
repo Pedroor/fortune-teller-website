@@ -27,6 +27,25 @@ export default function WhatsAppButton({
   
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
+  // Função para detectar se é dispositivo mobile
+  const isMobile = () => {
+    if (typeof window === 'undefined') return false;
+    
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+           (navigator.maxTouchPoints && navigator.maxTouchPoints > 2 && /MacIntel/.test(navigator.platform));
+  };
+
+  // Função para abrir WhatsApp com melhor compatibilidade mobile
+  const openWhatsApp = () => {
+    if (isMobile()) {
+      // No mobile, usar window.location.href para melhor compatibilidade
+      window.location.href = whatsappUrl;
+    } else {
+      // No desktop, usar window.open para abrir em nova aba
+      window.open(whatsappUrl, '_blank');
+    }
+  };
+
   const handleClick = () => {
     // Se houver um scrollTo, navegar para a seção primeiro
     if (scrollTo) {
@@ -38,15 +57,15 @@ export default function WhatsAppButton({
         });
         // Aguardar um pouco antes de abrir o WhatsApp para dar tempo da animação
         setTimeout(() => {
-          window.open(whatsappUrl, '_blank');
+          openWhatsApp();
         }, 1000);
       } else {
         // Se não encontrar o elemento, abrir WhatsApp diretamente
-        window.open(whatsappUrl, '_blank');
+        openWhatsApp();
       }
     } else {
       // Comportamento padrão
-      window.open(whatsappUrl, '_blank');
+      openWhatsApp();
     }
     
     if (onClick) {

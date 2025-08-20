@@ -232,7 +232,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="group hover-lift mystical-shadow hover-glow transition-all duration-300 mystical-border text-center card-gradient">
               <CardHeader>
                 <div className="mx-auto w-20 h-20 golden-gradient rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform float">
@@ -241,18 +241,6 @@ export default function Home() {
                 <CardTitle className="text-xl golden-text-medium">Baralho Cigano</CardTitle>
                 <CardDescription className="text-center">
                   É possível entender situações do passado, clarear o presente e identificar as possibilidades do futuro.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="group hover-lift mystical-shadow hover-glow transition-all duration-300 mystical-border text-center card-gradient">
-              <CardHeader>
-                <div className="mx-auto w-20 h-20 golden-gradient rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform float" style={{animationDelay: '0.5s'}}>
-                  <Eye className="w-10 h-10 text-white" />
-                </div>
-                <CardTitle className="text-xl golden-text-medium">Tarot</CardTitle>
-                <CardDescription className="text-center">
-                  Revela mensagens do inconsciente, mostra caminhos, bloqueios e possibilidades futuras. Ideal para clareza sobre decisões, relacionamentos e carreira.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -783,7 +771,7 @@ export default function Home() {
               <h4 className="font-semibold mb-4">Serviços</h4>
               <div className="space-y-2 text-sm text-muted-foreground">
                 <div>Baralho Cigano</div>
-                <div>Tarot</div>
+
                 <div>Oráculo de Ossos</div>
                 <div>Jogo de Exu</div>
               </div>

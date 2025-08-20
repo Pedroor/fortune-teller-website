@@ -62,12 +62,7 @@ export default function Navigation() {
                           >
                             Baralho Cigano
                           </div>
-                          <div 
-                            className="cursor-pointer hover:text-primary transition-colors text-sm py-2 px-2 rounded hover:bg-accent/50"
-                            onClick={() => scrollToSection('methods')}
-                          >
-                            Tarot
-                          </div>
+
                           <div 
                             className="cursor-pointer hover:text-primary transition-colors text-sm py-2 px-2 rounded hover:bg-accent/50"
                             onClick={() => scrollToSection('methods')}
