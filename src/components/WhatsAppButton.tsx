@@ -8,7 +8,9 @@ interface WhatsAppButtonProps {
   size?: "default" | "sm" | "lg" | "icon";
   variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
   children?: React.ReactNode;
+  message?: string;
   onClick?: () => void;
+  scrollTo?: string; // Nova prop para redirecionamento
 }
 
 export default function WhatsAppButton({ 
@@ -16,17 +18,37 @@ export default function WhatsAppButton({
   size = "default", 
   variant = "default",
   children,
-  onClick
+  message = "Olá! Gostaria de saber mais sobre seus serviços espirituais.",
+  onClick,
+  scrollTo
 }: WhatsAppButtonProps) {
-  const phoneNumber = "5511999999999"; // Número do WhatsApp (formato internacional)
-  const message = encodeURIComponent(
-    "Olá Mãe Amanda! Gostaria de agendar uma consulta. Pode me ajudar com mais informações sobre os valores e horários disponíveis?"
-  );
+  const phoneNumber = "85992117815"; // Número do WhatsApp atualizado
+  const encodedMessage = encodeURIComponent(message);
   
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
   const handleClick = () => {
-    window.open(whatsappUrl, '_blank');
+    // Se houver um scrollTo, navegar para a seção primeiro
+    if (scrollTo) {
+      const element = document.getElementById(scrollTo);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+        });
+        // Aguardar um pouco antes de abrir o WhatsApp para dar tempo da animação
+        setTimeout(() => {
+          window.open(whatsappUrl, '_blank');
+        }, 1000);
+      } else {
+        // Se não encontrar o elemento, abrir WhatsApp diretamente
+        window.open(whatsappUrl, '_blank');
+      }
+    } else {
+      // Comportamento padrão
+      window.open(whatsappUrl, '_blank');
+    }
+    
     if (onClick) {
       onClick();
     }

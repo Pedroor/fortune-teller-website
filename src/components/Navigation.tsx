@@ -1,207 +1,177 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import { 
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import { Menu, X, Gem, Phone, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { Menu, X } from "lucide-react";
+import WhatsAppButton from "./WhatsAppButton";
+import Image from "next/image";
+import logo from "../../public/Pai Paulo de Ayra (49).jpg";
+import { useState, useEffect } from "react";
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
+  // Mobile menu state and effects removed
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+    }
+  };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <Gem className="h-8 w-8 text-primary mystical-glow" />
-            <span className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-              Mãe Amanda
-            </span>
-          </Link>
-
-          {/* Contact Info - Desktop */}
-          <div className="hidden lg:flex items-center space-x-6 text-sm text-muted-foreground">
-            <div className="flex items-center space-x-2">
-              <Phone className="h-4 w-4" />
-              <span>(11) 99999-9999</span>
+    <nav className="fixed top-0 left-0 right-0 z-[9997] bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border shadow-sm mobile-header-visible">
+      {/* Main navigation */}
+      <div className="container mx-auto px-3 sm:px-4 py-2 md:py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo/Brand - Always visible and responsive */}
+          <div className="flex items-center space-x-2 md:space-x-4 lg:space-x-5">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
+              <Image src={logo} alt="Mãe Amanda Cartomante" width={100} height={100} className="object-cover" />
             </div>
-            <div className="flex items-center space-x-2">
-              <MapPin className="h-4 w-4" />
-              <span>São Paulo - SP</span>
+            <div className="hidden sm:block">
+              <span className="text-base md:text-lg lg:text-2xl font-bold">Mãe Amanda</span>
+              <div className="text-xs md:text-sm text-muted-foreground">Cartomante</div>
+            </div>
+            <div className="sm:hidden">
+              <span className="text-xs font-bold">Mãe Amanda</span>
+              <div className="text-xs text-muted-foreground">Cartomante</div>
             </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent hover:bg-accent hover:text-accent-foreground">
-                    Consultas
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid gap-3 p-6 w-[400px]">
-                      <NavigationMenuLink asChild>
-                        <Link href="/baralho-cigano" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                          <div className="text-sm font-medium leading-none">Baralho Cigano</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Entenda seu passado, presente e futuro através das cartas ciganas
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link href="/tarot" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                          <div className="text-sm font-medium leading-none">Tarot</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Mensagens do inconsciente e orientações para sua vida
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link href="/oraculo-ossos" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                          <div className="text-sm font-medium leading-none">Oráculo de Ossos</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Mensagens dos guias espirituais para cura e proteção
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link href="/jogo-de-exu" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                          <div className="text-sm font-medium leading-none">Jogo de Exu</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Comunicação direta com Exu
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
+          {/* Desktop Navigation Menu */}
+          <NavigationMenu className="hidden lg:flex">
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger 
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection('methods')}
+                >
+                  Consultas
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="w-[400px] md:w-[500px] lg:w-[600px] p-4">
+                    <div className="grid grid-cols-2 gap-8">
+                      <div className="flex flex-col min-h-[200px]">
+                        <h4 className="font-semibold text-sm text-foreground mb-3 border-b border-border/30 pb-2">
+                          Métodos de Consulta
+                        </h4>
+                        <div className="flex-1 space-y-2">
+                          <div 
+                            className="cursor-pointer hover:text-primary transition-colors text-sm py-2 px-2 rounded hover:bg-accent/50"
+                            onClick={() => scrollToSection('methods')}
+                          >
+                            Baralho Cigano
+                          </div>
+                          <div 
+                            className="cursor-pointer hover:text-primary transition-colors text-sm py-2 px-2 rounded hover:bg-accent/50"
+                            onClick={() => scrollToSection('methods')}
+                          >
+                            Tarot
+                          </div>
+                          <div 
+                            className="cursor-pointer hover:text-primary transition-colors text-sm py-2 px-2 rounded hover:bg-accent/50"
+                            onClick={() => scrollToSection('methods')}
+                          >
+                            Oráculo de Ossos
+                          </div>
+                          <div 
+                            className="cursor-pointer hover:text-primary transition-colors text-sm py-2 px-2 rounded hover:bg-accent/50"
+                            onClick={() => scrollToSection('methods')}
+                          >
+                            Jogo de Exu
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex flex-col min-h-[200px]">
+                        <h4 className="font-semibold text-sm text-foreground mb-3 border-b border-border/30 pb-2">
+                          Serviços
+                        </h4>
+                        <div className="flex-1 space-y-2">
+                          <div 
+                            className="cursor-pointer hover:text-primary transition-colors text-sm py-2 px-2 rounded hover:bg-accent/50"
+                            onClick={() => scrollToSection('services')}
+                          >
+                            Consultas
+                          </div>
+                          <div 
+                            className="cursor-pointer hover:text-primary transition-colors text-sm py-2 px-2 rounded hover:bg-accent/50"
+                            onClick={() => scrollToSection('services')}
+                          >
+                            Rituais
+                          </div>
+                          <div 
+                            className="cursor-pointer hover:text-primary transition-colors text-sm py-2 px-2 rounded hover:bg-accent/50"
+                            onClick={() => scrollToSection('services')}
+                          >
+                            Banhos Energéticos
+                          </div>
+                          <div 
+                            className="cursor-pointer hover:text-primary transition-colors text-sm py-2 px-2 rounded hover:bg-accent/50"
+                            onClick={() => scrollToSection('services')}
+                          >
+                            Trabalhos Espirituais
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <NavigationMenuLink asChild>
-                    <Link href="/sobre" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50">
-                      Sobre
-                    </Link>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <NavigationMenuLink asChild>
-                    <Link href="/depoimentos" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50">
-                      Depoimentos
-                    </Link>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <NavigationMenuLink asChild>
-                    <Link href="/valores" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50">
-                      Valores
-                    </Link>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <NavigationMenuLink asChild>
-                    <Link href="/contato" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50">
-                      Contato
-                    </Link>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              
+              <NavigationMenuItem>
+                <NavigationMenuLink 
+                  className="cursor-pointer hover:text-primary transition-colors px-4 py-2"
+                  onClick={() => scrollToSection('about')}
+                >
+                  Sobre
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              
+              <NavigationMenuItem>
+                <NavigationMenuLink 
+                  className="cursor-pointer hover:text-primary transition-colors px-4 py-2"
+                  onClick={() => scrollToSection('testimonials')}
+                >
+                  Depoimentos
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              
+              <NavigationMenuItem>
+                <NavigationMenuLink 
+                  className="cursor-pointer hover:text-primary transition-colors px-4 py-2"
+                  onClick={() => scrollToSection('services')}
+                >
+                  Valores
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              
+              <NavigationMenuItem>
+                <NavigationMenuLink 
+                  className="cursor-pointer hover:text-primary transition-colors px-4 py-2"
+                  onClick={() => scrollToSection('contact')}
+                >
+                  Contato
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
 
-            <WhatsAppButton>
+          {/* Right side - WhatsApp Button only */}
+          <div className="flex items-center">
+            {/* WhatsApp Button - Always visible */}
+            <WhatsAppButton 
+              size="sm" 
+              className="text-xs sm:text-sm"
+              message="Olá! Gostaria de saber mais sobre seus serviços espirituais."
+         
+            >
               WhatsApp
             </WhatsAppButton>
           </div>
-
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden p-2 rounded-md hover:bg-accent"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
         </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-card border-t border-border">
-              <Link
-                href="/baralho-cigano"
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Baralho Cigano
-              </Link>
-              <Link
-                href="/tarot"
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Tarot
-              </Link>
-              <Link
-                href="/oraculo-ossos"
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Oráculo de Ossos
-              </Link>
-              <Link
-                href="/jogo-de-exu"
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Jogo de Exu
-              </Link>
-              <Link
-                href="/sobre"
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Sobre
-              </Link>
-              <Link
-                href="/depoimentos"
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Depoimentos
-              </Link>
-              <Link
-                href="/valores"
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Valores
-              </Link>
-              <Link
-                href="/contato"
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Contato
-              </Link>
-              <div className="pt-4">
-                <WhatsAppButton className="w-full" onClick={() => setIsOpen(false)}>
-                  Marcar no WhatsApp
-                </WhatsAppButton>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </nav>
   );

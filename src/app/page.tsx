@@ -1,13 +1,13 @@
+"use client"
 import Navigation from "@/components/Navigation";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { Button } from "@/components/ui/button";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { 
   Eye, 
   Sparkles, 
-  Moon, 
   Star, 
   Flame,
   Calendar,
@@ -15,15 +15,14 @@ import {
   Phone,
   Mail,
   Clock,
-  Play,
   Heart,
-  DollarSign,
-  Users,
   Shield,
   MessageCircle,
   Droplets,
-  Search
+  Search,
+  Instagram
 } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -31,7 +30,7 @@ export default function Home() {
       <Navigation />
       
             {/* Alert Banner */}
-      <div className="pt-16 light-gold-bg border-b mystical-border">
+      {/* <div className="pt-16 light-gold-bg border-b mystical-border">
         <div className="container mx-auto px-4 py-4">
           <div className="text-center">
             <p className="text-lg md:text-xl font-medium high-contrast-text">
@@ -39,12 +38,23 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden particle-bg">
-        {/* Background gradient */}
-        <div className="absolute inset-0 mystical-gradient opacity-90" />
+      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden particle-bg pt-16 sm:pt-20 md:pt-24">
+        {/* Background image */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url('/Pai Paulo de Ayra (50).jpg')",
+              backgroundPosition: 'center top'
+            }}
+          />
+        </div>
+        
+        {/* Background gradient overlay */}
+        <div className="absolute inset-0 mystical-gradient opacity-60" />
         
         {/* Floating mystical elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -56,38 +66,38 @@ export default function Home() {
           <div className="absolute top-1/5 right-1/5 w-1.5 h-1.5 bg-primary rounded-full float" style={{animationDelay: '1.5s'}} />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto fade-in-up">
-            <Badge variant="secondary" className="mb-6 text-sm px-4 py-2 mystical-shadow hover-glow">
-              <Sparkles className="w-4 h-4 mr-2 mystical-glow" />
-              Mãe Amanda Cartomante
-            </Badge>
+        <div className="container mx-auto px-4 relative z-20">
+          <div className="grid lg:grid-cols-2 gap-8 items-center min-h-screen py-16 sm:py-20">
+            {/* Left side - Text content */}
+            <div className="text-center lg:text-left fade-in-up order-2 lg:order-1">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 mystical-text leading-tight">
+                TRANSFORMO VIDAS
+                <br />
+                <span className="golden-text">ATRAVÉS DE MAGIA</span>
+              </h1>
+              
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                Descubra os segredos que o universo tem para você. Com sabedoria ancestral e 
+                conexão espiritual, revelo o que está oculto e transformo destinos.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <WhatsAppButton 
+                  size="lg" 
+                  className="text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 mystical-shadow hover-lift hover-glow"
+                  message="Olá! Gostaria de marcar uma consulta espiritual completa. Pode me ajudar com mais informações sobre horários e valores?"
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 mystical-text">
-              TRANSFORMO VIDAS
-              <br />
-              <span className="golden-text">ATRAVÉS DE MAGIA</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-              Descubra os segredos que o universo tem para você. Com sabedoria ancestral e 
-              conexão espiritual, revelo o que está oculto e transformo destinos.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <WhatsAppButton size="lg" className="text-lg px-8 py-6 mystical-shadow hover-lift hover-glow">
-                Marcar Consulta no WhatsApp
-              </WhatsAppButton>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6 mystical-border hover-lift glass-effect">
-                <Play className="w-5 h-5 mr-2" />
-                Ver Apresentação
-              </Button>
+                >
+                  Marcar Consulta no WhatsApp
+                </WhatsAppButton>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* Video Section */}
+      {/* Video Section
       <section className="py-20 card-gradient">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -107,39 +117,42 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Second Part - Revelations */}
-      <section className="py-20">
+      {/* About Mãe Amanda */}
+      <section id="about" className="py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 golden-text-readable">
-              Nem tudo é o que <span className="mystical-text">parece...</span>
-            </h2>
-            <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
-              <p>
-                <strong className="text-foreground">e o que você sente tem um motivo.</strong>
-              </p>
-              <p>
-                Eu vou te conduzir por um caminho de revelações.<br />
-                Seu passado fala, seu presente clama, e o futuro… já está se desenhando.
-              </p>
-              <p className="text-primary font-semibold">
-                Você está pronto(a) para descobrir o que os olhos não veem, mas a alma sente?
-              </p>
-              <p>
-                As respostas estão aqui — e a transformação começa quando você decide enxergar.
-              </p>
-              <div className="card-gradient p-8 rounded-lg mystical-border mystical-shadow my-8 hover-lift">
-                <p className="text-xl font-bold mystical-text mb-4">
-                  Chega de viver no escuro.
-                </p>
-                <p>
-                  Com uma única consulta, você pode dar o primeiro passo rumo a uma vida mais leve, próspera e feliz.
-                </p>
-                <p className="mt-4 font-semibold text-foreground">
-                  Já funcionou com muitos. Agora é a sua vez.
-                </p>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Quem é <span className="text-primary">Mãe Amanda</span>
+              </h2>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1">
+                <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
+                  <p>
+                    Sou <strong className="text-primary">Mãe Amanda Cartomante</strong>, Mãe de Santo, Mameto de Quimbanda, Juremeira e guardiã dos mistérios que unem o visível ao invisível.
+                  </p>
+                  <p>
+                    Com sabedoria ancestral e responsabilidade espiritual, sou especialista em amarração amorosa, abertura de caminhos e jogos de cartas, auxiliando quem busca respostas, direção e transformação.
+                  </p>
+                  <p className="text-foreground font-semibold">
+                    Se você precisa de ajuda no amor, na vida financeira ou espiritual, estou aqui para orientar com respeito, sigilo e firmeza.
+                  </p>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2">
+                <div className="aspect-square bg-gradient-to-br from-primary/20 to-background rounded-lg flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/Pai Paulo de Ayra (49).jpg"
+                    alt="Pai Paulo de Ayra"
+                    width={400}
+                    height={400}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -208,7 +221,7 @@ export default function Home() {
       </section> */}
 
       {/* Services Cards */}
-      <section className="py-20">
+      <section id="methods" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 golden-text-readable">
@@ -272,7 +285,7 @@ export default function Home() {
       </section>
 
       {/* How it Works */}
-      <section className="py-20 bg-card/50">
+      <section id="how-it-works" className="py-20 bg-card/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
@@ -297,7 +310,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20">
+      <section id="testimonials" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -355,7 +368,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-card/50">
+      <section id="services" className="py-20 bg-card/50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
@@ -376,10 +389,15 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="text-center flex-grow flex flex-col justify-between">
                   <div className="mb-4">
-                    <div className="text-3xl font-bold mystical-text">R$ 277</div>
+                    <div className="text-3xl font-bold mystical-text">R$ 277,00</div>
                     <div className="text-sm text-muted-foreground line-through">De R$ 333,00</div>
                   </div>
-                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                  <WhatsAppButton 
+                    size="sm" 
+                    className="w-full py-3 text-base"
+                    message="Olá! Gostaria de agendar uma consulta completa por R$ 277,00. Pode me ajudar com o agendamento?"
+                    scrollTo="contact"
+                  >
                     Agendar Consulta
                   </WhatsAppButton>
                 </CardContent>
@@ -398,10 +416,15 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="text-center flex-grow flex flex-col justify-between">
                   <div className="mb-4">
-                    <div className="text-3xl font-bold mystical-text">R$ 70</div>
-                    <div className="text-sm text-muted-foreground line-through">De R$ 100,00</div>
+                    <div className="text-3xl font-bold mystical-text">R$ 100,00</div>
+                    <div className="text-sm text-muted-foreground line-through">De R$ 130,00</div>
                   </div>
-                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                  <WhatsAppButton 
+                    size="sm" 
+                    className="w-full py-3 text-base"
+                    message="Olá! Gostaria de fazer 4 perguntas objetivas por R$ 100,00. Pode me ajudar com isso?"
+                    scrollTo="contact"
+                  >
                     Fazer Perguntas
                   </WhatsAppButton>
                 </CardContent>
@@ -420,10 +443,15 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="text-center flex-grow flex flex-col justify-between">
                   <div className="mb-4">
-                    <div className="text-3xl font-bold mystical-text">R$ 68</div>
-                    <div className="text-sm text-muted-foreground line-through">De R$ 97,00</div>
+                    <div className="text-3xl font-bold mystical-text">R$ 97,00</div>
+                    <div className="text-sm text-muted-foreground line-through">De R$ 137,00</div>
                   </div>
-                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                  <WhatsAppButton 
+                    size="sm" 
+                    className="w-full py-3 text-base"
+                    message="Olá! Gostaria de solicitar uma vela de pedido personalizada por R$ 97,00. Pode me ajudar com isso?"
+                    scrollTo="contact"
+                  >
                     Solicitar Vela
                   </WhatsAppButton>
                 </CardContent>
@@ -439,10 +467,15 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="text-center flex-grow flex flex-col justify-between">
                   <div className="mb-4">
-                    <div className="text-3xl font-bold mystical-text">R$ 138</div>
-                    <div className="text-sm text-muted-foreground line-through">De R$ 197,00</div>
+                    <div className="text-3xl font-bold mystical-text">R$ 197,00</div>
+                    <div className="text-sm text-muted-foreground line-through">De R$ 277,00</div>
                   </div>
-                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                  <WhatsAppButton 
+                    size="sm" 
+                    className="w-full py-3 text-base"
+                    message="Olá! Gostaria de solicitar um ritual de prosperidade por R$ 197,00. Pode me ajudar com isso?"
+                    scrollTo="contact"
+                  >
                     Solicitar Ritual
                   </WhatsAppButton>
                 </CardContent>
@@ -458,10 +491,15 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="text-center flex-grow flex flex-col justify-between">
                   <div className="mb-4">
-                    <div className="text-3xl font-bold mystical-text">R$ 138</div>
-                    <div className="text-sm text-muted-foreground line-through">De R$ 197,00</div>
+                    <div className="text-3xl font-bold mystical-text">R$ 197,00</div>
+                    <div className="text-sm text-muted-foreground line-through">De R$ 277,00</div>
                   </div>
-                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                  <WhatsAppButton 
+                    size="sm" 
+                    className="w-full py-3 text-base"
+                    message="Olá! Gostaria de solicitar um ritual amoroso por R$ 197,00. Pode me ajudar com isso?"
+                    scrollTo="contact"
+                  >
                     Solicitar Ritual
                   </WhatsAppButton>
                 </CardContent>
@@ -478,11 +516,16 @@ export default function Home() {
                 <CardContent className="text-center flex-grow flex flex-col justify-between">
                   <div className="mb-4">
            
-                    <div className="text-3xl font-bold mystical-text">R$ 110</div>
-                    <div className="text-sm text-muted-foreground line-through">De R$ 157,00</div>
+                    <div className="text-3xl font-bold mystical-text">R$ 157,00</div>
+                    <div className="text-sm text-muted-foreground line-through">De R$ 197,00</div>
                   
                   </div>
-                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                  <WhatsAppButton 
+                    size="sm" 
+                    className="w-full py-3 text-base"
+                    message="Olá! Gostaria de solicitar um banho energético de limpeza espiritual por R$ 157,00. Pode me ajudar com isso?"
+                    scrollTo="contact"
+                  >
                     Solicitar Banho
                   </WhatsAppButton>
                 </CardContent>
@@ -499,11 +542,16 @@ export default function Home() {
                 <CardContent className="text-center flex-grow flex flex-col justify-between">
                   <div className="mb-4">
            
-                    <div className="text-3xl font-bold mystical-text">R$ 110</div>
-                    <div className="text-sm text-muted-foreground line-through">De R$ 157,00</div>
+                    <div className="text-3xl font-bold mystical-text">R$ 157,00</div>
+                    <div className="text-sm text-muted-foreground line-through">De R$ 197,00</div>
                   
                   </div>
-                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                  <WhatsAppButton 
+                    size="sm" 
+                    className="w-full py-3 text-base"
+                    message="Olá! Gostaria de solicitar um banho energético de amor por R$ 157,00. Pode me ajudar com isso?"
+                    scrollTo="contact"
+                  >
                     Solicitar Banho
                   </WhatsAppButton>
                 </CardContent>
@@ -519,11 +567,16 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="text-center flex-grow flex flex-col justify-between">
                   <div className="mb-4">
-                    <div className="text-3xl font-bold mystical-text">R$ 110</div>
-                    <div className="text-sm text-muted-foreground line-through">De R$ 157,00</div>
+                    <div className="text-3xl font-bold mystical-text">R$ 157,00</div>
+                    <div className="text-sm text-muted-foreground line-through">De R$ 197,00</div>
                   
                   </div>
-                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                  <WhatsAppButton 
+                    size="sm" 
+                    className="w-full py-3 text-base"
+                    message="Olá! Gostaria de solicitar um banho energético de prosperidade por R$ 157,00. Pode me ajudar com isso?"
+                    scrollTo="contact"
+                  >
                     Solicitar Banho
                   </WhatsAppButton>
                 </CardContent>
@@ -542,10 +595,15 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="text-center flex-grow flex flex-col justify-between">
                   <div className="mb-4">
-                    <div className="text-3xl font-bold mystical-text">R$ 35</div>
-                    <div className="text-sm text-muted-foreground line-through">De R$ 50,00</div>
+                    <div className="text-3xl font-bold mystical-text">R$ 50,00</div>
+                    <div className="text-sm text-muted-foreground line-through">De R$ 100,00</div>
                   </div>
-                  <WhatsAppButton size="sm" className="w-full py-3 text-base">
+                  <WhatsAppButton 
+                    size="sm" 
+                    className="w-full py-3 text-base"
+                    message="Olá! Gostaria de solicitar uma avaliação espiritual para trabalho espiritual por R$ 50,00. Pode me ajudar com isso?"
+                    scrollTo="contact"
+                  >
                     Solicitar Avaliação
                   </WhatsAppButton>
                 </CardContent>
@@ -555,49 +613,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Mãe Amanda */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Quem é <span className="text-primary">Mãe Amanda</span>
-              </h2>
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="order-2 lg:order-1">
-                <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
-                  <p>
-                    Sou <strong className="text-primary">Mãe Amanda Cartomante</strong>, Mãe de Santo, Mameto de Quimbanda, Juremeira e guardiã dos mistérios que unem o visível ao invisível.
-                  </p>
-                  <p>
-                    Com sabedoria ancestral e responsabilidade espiritual, sou especialista em amarração amorosa, abertura de caminhos e jogos de cartas, auxiliando quem busca respostas, direção e transformação.
-                  </p>
-                  <p className="text-foreground font-semibold">
-                    Se você precisa de ajuda no amor, na vida financeira ou espiritual, estou aqui para orientar com respeito, sigilo e firmeza.
-                  </p>
-                </div>
-              </div>
-              <div className="order-1 lg:order-2">
-                <div className="aspect-square bg-gradient-to-br from-primary/20 to-background rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-48 h-48 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-6xl">👩🏽‍🦱</span>
-                    </div>
-                    <p className="text-lg font-medium text-muted-foreground italic">
-                      &quot;Foto da Mãe Amanda&quot;
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
-      <section className="py-20 bg-card/50">
+      <section id="contact" className="py-20 bg-card/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
@@ -608,22 +625,87 @@ export default function Home() {
                 Sua transformação está a um clique de distância
               </p>
             </div>
-
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
+            <div className="space-y-6 flex flex-col h-full">
+                <WhatsAppButton 
+                  size="lg" 
+                  className="w-full text-lg py-6"
+                  message="Olá! Gostaria de agendar uma consulta pelo WhatsApp. Pode me ajudar com horários disponíveis?"
+                  scrollTo="contact"
+                >
+                  Agendar pelo WhatsApp
+                </WhatsAppButton>
+                <WhatsAppButton 
+                  variant="outline" 
+                  size="lg" 
+                  className="w-full text-lg py-6 border-primary/50"
+                  message="Olá! Preciso de uma consulta de emergência. Pode me atender o quanto antes?"
+                  scrollTo="contact"
+                >
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Consulta de Emergência
+                </WhatsAppButton>
+                
+                <Card className="border-primary/20 bg-primary/5">
+                  <CardContent className="pt-6">
+                    <h4 className="font-semibold mb-2 text-primary">Importante</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Todas as consultas são realizadas com total sigilo e respeito. 
+                      Prepare-se para receber orientações que podem transformar sua vida.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            <div className="grid pt-12 gap-12 items-start">
+              <div className="flex flex-col h-full">
                 <h3 className="text-2xl font-bold mb-6">Informações de Contato</h3>
                 <div className="space-y-4 mb-8">
-                  <div className="flex items-center space-x-3">
+                  <div 
+                    onClick={() => {
+                      const phoneNumber = "85992117815";
+                      const message = "Olá! Gostaria de entrar em contato pelo telefone (85) 99211-7815. Pode me ajudar?";
+                      const encodedMessage = encodeURIComponent(message);
+                      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                      window.open(whatsappUrl, '_blank');
+                    }}
+                    className="flex items-center justify-start space-x-3 p-3 w-full border border-primary/20 bg-primary/5 rounded-lg cursor-pointer"
+                  >
                     <Phone className="w-5 h-5 text-primary" />
-                    <span>(11) 99999-9999</span>
+                    <span>(85) 99211-7815</span>
                   </div>
-                  <div className="flex items-center space-x-3">
+                  <div 
+                    onClick={() => {
+                      const phoneNumber = "85992117815";
+                      const message = "Olá! Gostaria de entrar em contato por email. Pode me passar mais informações?";
+                      const encodedMessage = encodeURIComponent(message);
+                      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                      window.open(whatsappUrl, '_blank');
+                    }}
+                    className="flex items-center justify-start space-x-3 p-3 w-full border border-primary/20 bg-primary/5 rounded-lg cursor-pointer"
+                  >
                     <Mail className="w-5 h-5 text-primary" />
-                    <span>maeamanda@cartomante.com.br</span>
+                    <span>Contato por email</span>
                   </div>
-                  <div className="flex items-center space-x-3">
+                  <div 
+                    onClick={() => {
+                      const phoneNumber = "85992117815";
+                      const message = "Olá! Gostaria de agendar uma consulta presencial em Fortaleza - CE. Pode me ajudar?";
+                      const encodedMessage = encodeURIComponent(message);
+                      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                      window.open(whatsappUrl, '_blank');
+                    }}
+                    className="flex items-center justify-start space-x-3 p-3 w-full border border-primary/20 bg-primary/5 rounded-lg cursor-pointer"
+                  >
                     <MapPin className="w-5 h-5 text-primary" />
-                    <span>São Paulo - SP (Consultas presenciais)</span>
+                    <span>Fortaleza - CE (Consultas presenciais)</span>
+                  </div>
+                  <div 
+                    onClick={() => {
+                      window.open('https://www.instagram.com/amandahcartomante/', '_blank');
+                    }}
+                    className="flex items-center justify-start space-x-3 p-3 w-full border border-primary/20 bg-primary/5 rounded-lg cursor-pointer"
+                  >
+                    <Instagram className="w-5 h-5 text-primary" />
+                    <span>@amandahcartomante</span>
                   </div>
                 </div>
                 
@@ -649,29 +731,39 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="space-y-6">
-                <WhatsAppButton size="lg" className="w-full text-lg py-6">
-                  Agendar pelo WhatsApp
-                </WhatsAppButton>
-                <Button variant="outline" size="lg" className="w-full text-lg py-6 border-primary/50">
-                  <Calendar className="w-5 h-5 mr-2" />
-                  Consulta de Emergência
-                </Button>
-                
-                <Card className="border-primary/20 bg-primary/5">
-                  <CardContent className="pt-6">
-                    <h4 className="font-semibold mb-2 text-primary">Importante</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Todas as consultas são realizadas com total sigilo e respeito. 
-                      Prepare-se para receber orientações que podem transformar sua vida.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
+           
             </div>
           </div>
         </div>
       </section>
+
+      {/* Back to Top Button */}
+      <div className="fixed bottom-8 right-8 z-[9996]">
+        <Button
+          onClick={() => {
+            document.getElementById('hero')?.scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'start' 
+            });
+          }}
+          className="w-12 h-12 rounded-full bg-primary text-white shadow-lg hover:bg-primary/90 hover:scale-110 transition-all duration-300 mystical-glow"
+          size="icon"
+        >
+          <svg 
+            className="w-5 h-5" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M5 10l7-7m0 0l7 7m-7-7v18" 
+            />
+          </svg>
+        </Button>
+      </div>
 
       {/* Footer */}
       <footer className="bg-card border-t border-border py-12">
@@ -714,6 +806,15 @@ export default function Home() {
                 <div>Agendamento</div>
                 <div>Localização</div>
                 <div>Horários</div>
+                <a 
+                  href="https://www.instagram.com/amandahcartomante/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 hover:text-primary transition-colors cursor-pointer"
+                >
+                  <Instagram className="w-4 h-4" />
+                  <span>Instagram</span>
+                </a>
               </div>
             </div>
           </div>
@@ -721,7 +822,7 @@ export default function Home() {
           <Separator className="my-8" />
           
           <div className="text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 Mãe Amanda Cartomante. Todos os direitos reservados. | Transformando vidas através da magia.</p>
+            <p>&copy; 2025 Mãe Amanda Cartomante. Todos os direitos reservados. | Transformando vidas através da magia.</p>
           </div>
         </div>
       </footer>

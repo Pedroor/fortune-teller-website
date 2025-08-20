@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   description: "Descubra os segredos que o universo tem para você. Consultas com Baralho Cigano, Tarot, Oráculo de Ossos e Jogo de Exu. Mãe de Santo especialista em amarração amorosa e abertura de caminhos.",
   keywords: "cartomante, baralho cigano, tarot, jogo de exu, oráculo de ossos, mãe de santo, amarração amorosa, abertura de caminhos, consulta espiritual, São Paulo",
   authors: [{ name: "Mãe Amanda Cartomante" }],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon-48x48.png",
+  },
   openGraph: {
     title: "Mãe Amanda Cartomante - Transformo Vidas Através de Magia",
     description: "Consultas espirituais com Baralho Cigano, Tarot, Jogo de Exu e Oráculo de Ossos. Transforme sua vida com sabedoria ancestral.",

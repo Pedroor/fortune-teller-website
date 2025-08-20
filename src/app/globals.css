@@ -41,6 +41,76 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Custom breakpoints */
+  --breakpoint-xs: 475px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* Custom breakpoint utilities */
+@layer utilities {
+  .xs\:block { @media (min-width: 475px) { display: block; } }
+  .xs\:hidden { @media (min-width: 475px) { display: none; } }
+  .xs\:flex { @media (min-width: 475px) { display: flex; } }
+  .xs\:text-sm { @media (min-width: 475px) { font-size: 0.875rem; } }
+  .xs\:text-base { @media (min-width: 475px) { font-size: 1rem; } }
+  .xs\:text-lg { @media (min-width: 475px) { font-size: 1.125rem; } }
+  .xs\:px-4 { @media (min-width: 475px) { padding-left: 1rem; padding-right: 1rem; } }
+  .xs\:py-2 { @media (min-width: 475px) { padding-top: 0.5rem; padding-bottom: 0.5rem; } }
+  .xs\:w-16 { @media (min-width: 475px) { width: 4rem; } }
+  .xs\:h-16 { @media (min-width: 475px) { height: 4rem; } }
+  .xs\:space-x-4 { @media (min-width: 475px) { --tw-space-x-reverse: 0; margin-right: calc(1rem * var(--tw-space-x-reverse)); margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse))); } }
+}
+
+/* Header mobile optimizations */
+@layer components {
+  /* Ensure header is always visible on mobile */
+  .mobile-header-visible {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9997;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgb(226, 179, 89);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  }
+
+  /* Dark mode header */
+  .dark .mobile-header-visible {
+    background: rgba(20, 20, 20, 0.95);
+    border-bottom: 1px solid rgba(194, 134, 48, 0.3);
+  }
+
+  /* Ensure content doesn't overlap header */
+  .content-with-header {
+    padding-top: 4rem; /* 64px - adjust based on header height */
+  }
+
+  @media (min-width: 640px) {
+    .content-with-header {
+      padding-top: 5rem; /* 80px */
+    }
+  }
+
+  @media (min-width: 768px) {
+    .content-with-header {
+      padding-top: 6rem; /* 96px */
+    }
+  }
+
+  /* Prevent body scroll when mobile menu is open */
+  .mobile-menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
 }
 
 :root {
@@ -405,4 +475,23 @@
     rgb(133, 77, 14),
     rgb(194, 134, 48)
   );
+}
+
+/* Responsive image positioning for different screen sizes */
+@media (max-width: 768px) {
+  .hero-image-container {
+    background-position: center 20% !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-image-container {
+    background-position: center 15% !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hero-image-container {
+    background-position: center top !important;
+  }
 }
